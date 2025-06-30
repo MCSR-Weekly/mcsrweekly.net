@@ -1,7 +1,5 @@
-#  The contact options.
-
 - type: twitter
-  icon: "fa-brands fa-twitter"
+  icon: 'fa-brands fa-twitter'
   url: 'https://twitter.com/MCSRWeekly'
 
 - type: bluesky
@@ -9,21 +7,25 @@
   url: 'https://bsky.app/profile/mcsrweekly.bsky.social'
 
 - type: mastodon
-  icon: 'fab fa-mastodon'
+  icon: 'fa-brands fa-mastodon'
   url:  'https://mastodon.social/@mcsrweekly'
 
-# - type: threads
-#   icon: 'fa-brands fa-threads'
-#   url: ''
-
-# - type: reddit
-#   icon: 'fa-brands fa-reddit'
-#   url: ''
+- type: threads
+  icon: 'fa-brands fa-threads'
+  url: 'https://threads.com/@MCSRWeekly'
 
 - type: rss
-  icon: "fas fa-rss"
+  icon: 'fas fa-rss'
   noblank: true
 
+- type: discord
+  icon: 'fa-brands fa-discord'
+  url: 'https://discord.gg/arxQMYAS5K'
+
+- type: github
+  icon: 'fa-brands fa-github'
+  url: 'https://github.com/MCSR-Weekly/mcsrweekly.net'
+
 - type: email
-  icon: "fas fa-envelope"
+  icon: 'fas fa-envelope'
   noblank: true
