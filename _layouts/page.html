@@ -4,11 +4,16 @@ layout: default
 
 <article class="px-1">
   {% if page.layout == 'page' or page.collection == 'tabs' %}
-    {% assign tab_key = page.title | downcase %}
-    {% assign title = site.data.locales['en'].tabs[tab_key] | default: page.title %}
-    <h1 class="dynamic-title">
-      {{ title }}
-    </h1>
+    <header>
+      {% assign tab_key = page.title | downcase %}
+      {% assign title = site.data.locales['en'].tabs[tab_key] | default: page.title %}
+      <h1 class="dynamic-title">
+        {{ title }}
+      </h1>
+      {% if page.description %}
+      <p class="post-desc fw-light mb-4">{{ page.description }}</p>
+      {% endif %}
+    </header>
     <div class="content">
       {{ content }}
     </div>

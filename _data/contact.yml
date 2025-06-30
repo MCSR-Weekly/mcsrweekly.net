@@ -1,17 +1,17 @@
 - type: twitter
-  icon: 'fa-brands fa-twitter'
+  icon: 'fab fa-twitter'
   url: 'https://twitter.com/MCSRWeekly'
 
 - type: bluesky
-  icon: 'fa-brands fa-bluesky'
+  icon: 'fab fa-bluesky'
   url: 'https://bsky.app/profile/mcsrweekly.bsky.social'
 
 - type: mastodon
-  icon: 'fa-brands fa-mastodon'
+  icon: 'fab fa-mastodon'
   url:  'https://mastodon.social/@mcsrweekly'
 
 - type: threads
-  icon: 'fa-brands fa-threads'
+  icon: 'fab fa-threads'
   url: 'https://threads.com/@MCSRWeekly'
 
 - type: rss
@@ -19,11 +19,11 @@
   noblank: true
 
 - type: discord
-  icon: 'fa-brands fa-discord'
+  icon: 'fab fa-discord'
   url: 'https://discord.gg/arxQMYAS5K'
 
 - type: github
-  icon: 'fa-brands fa-github'
+  icon: 'fab fa-github'
   url: 'https://github.com/MCSR-Weekly/mcsrweekly.net'
 
 - type: email
