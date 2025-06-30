@@ -1,0 +1,10 @@
+<time
+  {% if include.class %}
+    class="{{ include.class }}"
+  {% endif %}
+  {% if include.tooltip %}
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  {% endif %}
+>
+  {{ include.date | date: "%b %e, %Y" }}
+</time>

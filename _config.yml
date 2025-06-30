@@ -1,0 +1,83 @@
+title: MCSR Weekly
+tagline: A once-weekly roundup of what's happening in the Minecraft Speedrunning community.
+description: A once-weekly roundup of what's happening in the Minecraft Speedrunning community.
+
+url: "https://mcsrweekly.net"
+
+twitter:
+  username: MCSRWeekly
+social:
+  name: MCSR Weekly
+  email: mcsr.weekly@proton.me
+
+avatar:
+social_preview_image:
+theme_mode: dark
+
+toc: true
+paginate: 5
+baseurl: ""
+
+lang: en
+locale: en_US
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-include-cache
+
+# ----
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: _posts
+      type: posts
+    values:
+      layout: post
+      toc: true
+      permalink: /issue/:title/
+  - scope:
+      path: _drafts
+    values:
+      layout: post
+      toc: true
+      permalink: /draft/:title/
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE-MIT
+  - LICENSE-CC
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - .idea

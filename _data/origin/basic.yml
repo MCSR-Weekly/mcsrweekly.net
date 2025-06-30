@@ -1,0 +1,20 @@
+# fonts
+
+webfonts: /assets/lib/fonts/main.css
+
+# Libraries
+
+toc:
+  css: /assets/lib/tocbot/tocbot.min.css
+  js: /assets/lib/tocbot/tocbot.min.js
+
+fontawesome:
+  css: /assets/lib/fontawesome-free/css/all.min.css
+
+glightbox:
+  css: /assets/lib/glightbox/glightbox.min.css
+  js: /assets/lib/glightbox/glightbox.min.js
+
+lazy-polyfill:
+  css: /assets/lib/loading-attribute-polyfill/loading-attribute-polyfill.min.css
+  js: /assets/lib/loading-attribute-polyfill/loading-attribute-polyfill.umd.min.js

@@ -1,0 +1,31 @@
+<!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  {% if page.previous.url %}
+    <a
+      href="{{ site.baseurl }}{{ page.previous.url }}"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>{{ page.previous.title }}</p>
+    </a>
+  {% else %}
+    <div class="btn btn-outline-primary disabled" aria-label="Older">
+      <p>-</p>
+    </div>
+  {% endif %}
+
+  {% if page.next.url %}
+    <a
+      href="{{ site.baseurl }}{{page.next.url}}"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>{{ page.next.title }}</p>
+    </a>
+  {% else %}
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  {% endif %}
+</nav>
