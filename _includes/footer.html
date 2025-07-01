@@ -7,15 +7,14 @@
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    {{- '©' }}
-    <time>{{ 'now' | date: '%Y' }}</time>
+  <p>&copy; <time>{{ 'now' | date: '%Y' }}</time>
+    {% if page.url == '/credits/' %}
     <em class="fst-normal">{{ site.social.name }}</em>.
-    <span
-      data-bs-toggle="tooltip"
-      data-bs-placement="top"
-      title="The contents of this site are licensed under the Creative Commons Attribution 4.0 International (CC-BY-4.0) License."
-    >Some rights reserved.</span>
+    {% else %}
+    <a href="/credits" target="_blank">{{ site.social.name }}</a>.
+    {% endif %}
+    Contents licensed under
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY-4.0</a>.
   </p>
 
   <p>
