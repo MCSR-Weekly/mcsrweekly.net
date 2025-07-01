@@ -8,7 +8,7 @@ on:
       - README.md
       - LICENSE*
       - .gitignore
-      - .github/
+      - .github/**
       - '!.github/workflows/pages-deploy.yml' # always run if this workflow is changed
   workflow_dispatch:
 
