@@ -6,6 +6,9 @@ on:
 permissions:
   contents: read
 
+env:
+  CARGO_TERM_COLOR: always
+
 jobs:
   setup:
     name: "Setup"
@@ -26,17 +29,33 @@ jobs:
     name: Auto Crosspost
     runs-on: ubuntu-latest
     needs: setup
+    environment: crossposting # loads github environment secrets and variables, just for this job
     steps:
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-
       - name: Checkout Automation Tool
         uses: actions/checkout@v4
         with:
           repository: MCSR-Weekly/automation
 
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Enable Caching
+        uses: Swatinem/rust-cache@v2
+
       - name: Build Automation Tool
         run: cargo build --workspace --all-features --all-targets
 
-#      - name: Run Automation Tool
+      # https://stackoverflow.com/a/75789640
+      - name: Expose github environment as shell variables
+        env:
+          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+          VARS_CONTEXT: ${{ toJson(vars) }}
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          to_envs() { jq -r "to_entries[] | \"\(.key)<<$EOF\n\(.value)\n$EOF\n\""; }
+          echo "$VARS_CONTEXT" | to_envs >> $GITHUB_ENV
+          echo "$SECRETS_CONTEXT" | to_envs >> $GITHUB_ENV
+
+      - name: Run Automation Tool
 #        run: cargo run --bin crosspost -- ${{jobs.setup.outputs.a}}
+        run: cargo run --bin check_creds
