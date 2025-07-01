@@ -8,6 +8,8 @@ on:
       - README.md
       - LICENSE*
       - .gitignore
+      - .github/
+      - '!.github/workflows/pages-deploy.yml' # always run if this workflow is changed
   workflow_dispatch:
 
 permissions:
