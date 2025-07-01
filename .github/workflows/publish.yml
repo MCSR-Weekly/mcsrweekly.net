@@ -7,7 +7,9 @@ permissions:
   contents: read
 
 env:
+  # always print colors :D
   CARGO_TERM_COLOR: always
+  RUST_LOG_STYLE: always
 
 jobs:
   setup:
@@ -41,6 +43,9 @@ jobs:
 
       - name: Enable Caching
         uses: Swatinem/rust-cache@v2
+        with:
+          # save the cache even if execution fails
+          cache-on-failure: "${{ steps.run-tool.outcome == 'failure' }}"
 
       - name: Build Automation Tool
         run: cargo build --workspace --all-features --all-targets
@@ -57,5 +62,7 @@ jobs:
           echo "$SECRETS_CONTEXT" | to_envs >> $GITHUB_ENV
 
       - name: Run Automation Tool
+        id: run-tool
 #        run: cargo run --bin crosspost -- ${{jobs.setup.outputs.a}}
-        run: cargo run --bin check_creds
+#        run: cargo run --bin check_creds
+        run: exit 1
