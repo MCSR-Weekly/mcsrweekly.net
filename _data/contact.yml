@@ -10,9 +10,10 @@
   icon: 'fab fa-mastodon'
   url:  'https://mastodon.social/@mcsrweekly'
 
-- type: threads
-  icon: 'fab fa-threads'
-  url: 'https://threads.com/@MCSRWeekly'
+# broken :(
+#- type: threads
+#  icon: 'fab fa-threads'
+#  url: 'https://threads.com/@MCSRWeekly'
 
 - type: rss
   icon: 'fas fa-rss'
